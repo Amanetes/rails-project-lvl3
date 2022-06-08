@@ -1,0 +1,21 @@
+doctype html
+html.h-100.no-touch lang="#{I18n.locale}"
+  head
+    title
+      = content_for?(:title) ? yield(:title) : 'Bulletin Board'
+    meta[name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body.d-flex.flex-column.min-vh-100
+
+    = render 'layouts/shared/nav'
+
+    = render 'layouts/shared/flash'
+
+    main.container.wrapper.flex-grow-1
+      == yield
+
+    = render 'layouts/shared/footer'
