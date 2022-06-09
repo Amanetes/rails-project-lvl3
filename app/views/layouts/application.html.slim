@@ -1,5 +1,5 @@
 doctype html
-html.h-100.no-touch lang="#{I18n.locale}"
+html.h-100 lang="#{I18n.locale}"
   head
     title
       = content_for?(:title) ? yield(:title) : 'Bulletin Board'
@@ -15,7 +15,7 @@ html.h-100.no-touch lang="#{I18n.locale}"
 
     = render 'layouts/shared/flash'
 
-    main.container.wrapper.flex-grow-1
+    main
       == yield
 
     = render 'layouts/shared/footer'
