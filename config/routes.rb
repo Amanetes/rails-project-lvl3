@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resource :session, only: :destroy
 
     resources :bulletins
+    resource :profile, only: :show
   end
 end

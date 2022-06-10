@@ -3,8 +3,10 @@
 class Web::BulletinsController < Web::ApplicationController
   before_action :set_bulletin, only: %i[show edit update destroy]
 
+  # TODO: заменить стейт в отображении объявлений
   def index
-    @bulletins = Bulletin.all
+    @q = Bulletin.order(created_at: :desc).ransack(params[:q])
+    @bulletins = @q.result.includes(:category)
   end
 
   def new
@@ -14,7 +16,7 @@ class Web::BulletinsController < Web::ApplicationController
   def show; end
 
   def create
-    @bulletin = current_user.bulletins.new(bulletin_params)
+    @bulletin = current_user.bulletins.build(bulletin_params)
 
     if @bulletin.save
       flash[:success] = 'Объявление создано'
