@@ -11,4 +11,12 @@
             hr
           = link_to 'Добавить объявление', new_bulletin_path, class: 'btn btn-primary mb-3'
           = render 'search_form'
+          .row.mt-2
+            table.table.table-hover.mt-2
+              thead
+                tr
+                  th{ scope: :col } Название
+                  th{ scope: :col } Состояние
+                  th{ scope: :col } Дата публикации
+                  th{ scope: :col } Действия
 

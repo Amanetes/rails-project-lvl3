@@ -1,0 +1,5 @@
+ru:
+  web:
+    profiles:
+      show:
+        title: Мои объявления

@@ -1,0 +1,11 @@
+en:
+  layouts:
+    shared:
+      nav:
+        admin: Admin console
+        app_name: Bulletin board
+        sign_in: Sign In
+        sign_out: Sign Out
+        home_page: Home
+        my_bulletins: My bulletins
+        add_bulletin: Add bulletin
