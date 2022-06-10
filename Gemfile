@@ -22,8 +22,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'i18n-tasks', '~> 1.0.10'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
+gem 'pundit'
+gem 'rails-i18n', '~> 6.0'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim-rails'
@@ -55,6 +58,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'i18n-debug'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'slim_lint'

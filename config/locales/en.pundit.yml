@@ -1,0 +1,7 @@
+en:
+  pundit:
+    default: You cannot perform this action!
+    bulletin_policy:
+      show?: Access denied!
+      create?: You cannot create bulletins!
+      edit?: You cannot edit this bulletin!

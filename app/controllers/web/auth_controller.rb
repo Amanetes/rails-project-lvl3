@@ -7,9 +7,11 @@ class Web::AuthController < Web::ApplicationController
     existing_user = User.find_or_initialize_by(name: name, email: email)
     if existing_user.save
       sign_in existing_user
-      redirect_to root_path, success: t('success')
+      flash[:info] = 'Signed In'
+      redirect_to root_path
     else
-      redirect_to root_path, alert: t('failed')
+      flash.now[:error] = 'Failed'
+      redirect_back(fallback_location: root_path)
     end
   end
 
