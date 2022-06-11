@@ -2,11 +2,13 @@
 
 class Web::BulletinsController < Web::ApplicationController
   before_action :set_bulletin, only: %i[show edit update destroy]
+  before_action :authorize_bulletin!
+  after_action :verify_authorized
 
   # TODO: заменить стейт в отображении объявлений
   def index
     @q = Bulletin.order(created_at: :desc).ransack(params[:q])
-    @bulletins = @q.result.includes(:category)
+    @bulletins = @q.result.includes(:category).joins(:category)
   end
 
   def new
@@ -30,6 +32,10 @@ class Web::BulletinsController < Web::ApplicationController
 
   def set_bulletin
     @bulletin = Bulletin.find(params[:id])
+  end
+
+  def authorize_bulletin!
+    authorize(@bulletin || Bulletin)
   end
 
   def bulletin_params

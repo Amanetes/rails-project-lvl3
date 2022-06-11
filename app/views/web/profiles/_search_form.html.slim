@@ -2,7 +2,7 @@
   = search_form_for @q, url: profile_path do |f|
     .row.my-2
       .col-6
-        = f.input :title_cont, label: false, hint: 'Искать по названию объявления'
+        = f.input :title_cont, label: false, hint: :defaults
       .col-4
 
       .col-2

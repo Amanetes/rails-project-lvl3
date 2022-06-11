@@ -10,5 +10,9 @@ Rails.application.routes.draw do
 
     resources :bulletins
     resource :profile, only: :show
+
+    namespace :admin do
+      resources :categories
+    end
   end
 end

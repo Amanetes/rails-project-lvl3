@@ -1,0 +1,30 @@
+ru:
+  activerecord:
+    models:
+      category:
+        one: Категория
+        other: Категории
+        few: Категорий
+        many: Категорий
+      bulletin:
+        one: Объявление
+        few: Объявлений
+        many: Объявлений
+        other: Объявления
+    attributes:
+      category:
+        name: Название
+      bulletin:
+        title: Название
+        description: Описание
+        category: Категория
+        image: Изображение
+
+    errors:
+      models:
+        bulletin:
+          attributes:
+            title:
+              blank: не может быть пустым
+            description:
+              blank: не может быть пустым

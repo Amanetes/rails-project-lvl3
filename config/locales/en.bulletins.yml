@@ -3,3 +3,5 @@ en:
     bulletins:
       index:
         title: Bulletin board
+      new:
+        title: Add bulletin

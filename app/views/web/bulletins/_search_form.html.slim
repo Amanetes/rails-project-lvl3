@@ -2,13 +2,12 @@
   = search_form_for @q do |f|
     .row.my-2
       .col-6
-        = f.input :title_cont, label: false, hint: 'Искать по названию объявления'
+        = f.input :title_cont, label: false
       .col-4
         = f.input :category_id_eq, as: :select,
                 collection: Category.all,
                 include_blank: false,
                 label: false,
-                hint: 'Выбрать категорию',
                 input_html: { class: 'form-select' }
       .col-2
         = f.submit 'Искать', class: 'btn btn-primary me-2'

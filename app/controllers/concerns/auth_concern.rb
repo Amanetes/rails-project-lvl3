@@ -23,6 +23,13 @@ module AuthConcern
       @current_user ||= User.find_by(id: session[:user_id])
     end
 
-    helper_method :current_user, :signed_in?
+    def require_authentication
+      return if signed_in?
+
+      flash[:warning] = t 'global.flash.not_signed_in'
+      redirect_to root_path
+    end
+
+    helper_method :current_user, :signed_in?, :require_authentication
   end
 end
