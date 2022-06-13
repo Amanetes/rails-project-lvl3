@@ -16,3 +16,4 @@ en:
       q:
         title_cont: Search by title
         category_id_eq: Search by category
+        state_eq: Search by state

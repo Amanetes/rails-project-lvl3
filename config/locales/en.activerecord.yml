@@ -1,0 +1,36 @@
+en:
+  activerecord:
+    models:
+      category:
+        one: Category
+        other: Categories
+        few: Categories
+        many: Categories
+      bulletin:
+        one: Bulletin
+        few: Bulletins
+        many: Bulletins
+        other: Bulletins
+    attributes:
+      category:
+        name: Name
+      bulletin:
+        title: Title
+        description: description
+        category: Category
+        image: Image
+        created_at: Publication date
+        state:
+          draft: Draft
+          under_moderation: Under moderation
+          published: Published
+          rejected: Rejected
+          archived: Archived
+    errors:
+      models:
+        bulletin:
+          attributes:
+            title:
+              blank: can't be blank
+            description:
+              blank: can't be blank

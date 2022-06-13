@@ -9,7 +9,7 @@ class Bulletin < ApplicationRecord
   validates :title, presence: true, length: { minimum: 3 }
   validates :description, presence: true
 
-  aasm :state, column: :state do
+  aasm column: :state do
     state :draft, initial: true
     state :under_moderation
     state :published

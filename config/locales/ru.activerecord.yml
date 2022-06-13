@@ -20,7 +20,12 @@ ru:
         category: Категория
         image: Изображение
         created_at: Дата публикации
-
+        state:
+          draft: Черновик
+          under_moderation: На модерации
+          published: Опубликовано
+          rejected: Отклонено
+          archived: В архиве
     errors:
       models:
         bulletin:
