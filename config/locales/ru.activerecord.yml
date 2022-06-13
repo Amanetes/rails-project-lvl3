@@ -19,6 +19,7 @@ ru:
         description: Описание
         category: Категория
         image: Изображение
+        created_at: Дата публикации
 
     errors:
       models:

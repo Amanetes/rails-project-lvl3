@@ -3,5 +3,6 @@ ru:
     bulletins:
       index:
         title: Доска объявлений
+        header: Объявления
       new:
         title: Добавить объявление

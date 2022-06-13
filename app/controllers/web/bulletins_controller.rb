@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < Web::ApplicationController
-  before_action :set_bulletin, only: %i[show edit update destroy]
+  before_action :set_bulletin, only: %i[show edit update send_to_moderation archive]
   before_action :authorize_bulletin!
   after_action :verify_authorized
 
   # TODO: заменить стейт в отображении объявлений
   def index
-    @q = Bulletin.order(created_at: :desc).ransack(params[:q])
+    @q = Bulletin.published.order(created_at: :desc).ransack(params[:q])
     @bulletins = @q.result.includes(:category).joins(:category)
   end
 
@@ -25,6 +25,37 @@ class Web::BulletinsController < Web::ApplicationController
       redirect_to @bulletin
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @bulletin.update(bulletin_params)
+      flash[:success] = 'Объявление обновлено'
+      redirect_to @bulletin
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def send_to_moderation
+    if @bulletin.send_to_moderation!
+      flash[:success] = 'Отправлено на модерацию'
+      redirect_to profile_path
+    else
+      flash.now[:error] = 'Нельзя отправить на модерацию'
+      render :show
+    end
+  end
+
+  def archive
+    if @bulletin.archive!
+      flash[:success] = 'Отправлено в архив'
+      redirect_to profile_path
+    else
+      flash.now[:error] = 'Нельзя отправить в архив'
+      render :show
     end
   end
 

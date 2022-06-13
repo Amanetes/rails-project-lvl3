@@ -29,6 +29,14 @@ class BulletinPolicy < ApplicationPolicy
     admin?
   end
 
+  def send_to_moderation?
+    author?
+  end
+
+  def archive?
+    author? || admin?
+  end
+
   private
 
   def author?

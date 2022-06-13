@@ -3,5 +3,6 @@ en:
     bulletins:
       index:
         title: Bulletin board
+        header: Объявления
       new:
         title: Add bulletin

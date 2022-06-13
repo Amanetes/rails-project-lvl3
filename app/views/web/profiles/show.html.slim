@@ -15,8 +15,21 @@
             table.table.table-hover.mt-2
               thead
                 tr
-                  th{ scope: :col } Название
-                  th{ scope: :col } Состояние
-                  th{ scope: :col } Дата публикации
+                  th{ scope: :col } = sort_link(@q, :title)
+                  th{ scope: :col } = 'Состояние'
+                  th{ scope: :col } = sort_link(@q, :created_at)
                   th{ scope: :col } Действия
+                  th
+              tbody
+                - @bulletins.each do |bulletin|
+                  tr
+                    td = bulletin.title
+                    td = bulletin.user.email
+                    td = time_ago_in_words(bulletin.created_at)
+                    td
+                      = link_to 'Show', bulletin_path(bulletin), class: 'me-2'
+                      = link_to 'Edit', edit_bulletin_path(bulletin), class: 'me-2'
+                      - if bulletin.may_send_to_moderation?
+                        = link_to 'На модерацию', send_to_moderation_bulletin_path(bulletin), method: :patch
+                        = link_to 'В архив', archive_bulletin_path(bulletin), method: :patch
 

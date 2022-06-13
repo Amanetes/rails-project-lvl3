@@ -8,11 +8,16 @@ Rails.application.routes.draw do
 
     resource :session, only: :destroy
 
-    resources :bulletins
+    resources :bulletins, except: :destroy do
+      member do
+        patch :send_to_moderation
+        patch :archive
+      end
+    end
     resource :profile, only: :show
 
     namespace :admin do
-      resources :categories
+      resources :categories, except: :show
     end
   end
 end

@@ -2,4 +2,6 @@
 
 class Category < ApplicationRecord
   has_many :bulletins, dependent: :destroy, inverse_of: :category
+
+  validates :name, presence: true
 end
