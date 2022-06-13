@@ -6,3 +6,5 @@ en:
         header: Объявления
       new:
         title: Add bulletin
+      show:
+        info: Information

@@ -9,3 +9,5 @@ en:
         home_page: Home
         my_bulletins: My bulletins
         add_bulletin: Add bulletin
+      footer:
+        hexlet_title: © Хекслет %{year}

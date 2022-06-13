@@ -3,11 +3,16 @@
 class Bulletin < ApplicationRecord
   include AASM
 
+  has_one_attached :image
+
   belongs_to :user
   belongs_to :category
 
   validates :title, presence: true, length: { minimum: 3 }
   validates :description, presence: true
+  validates :image, attached: true,
+                    content_type: %i[png jpg jpeg],
+                    size: { less_than: 5.megabytes }
 
   aasm column: :state do
     state :draft, initial: true

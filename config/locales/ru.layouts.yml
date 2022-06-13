@@ -9,3 +9,5 @@ ru:
         home_page: Главная
         my_bulletins: Мои объявления
         add_bulletin: Добавить
+      footer:
+        hexlet_title: © Хекслет %{year}

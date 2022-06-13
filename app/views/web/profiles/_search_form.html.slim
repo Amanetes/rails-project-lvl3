@@ -5,7 +5,7 @@
         = f.input :title_cont, label: false, hint: :defaults
       .col-4
         = f.input :state_eq, as: :select,
-                collection: Bulletin.aasm.states.map(&:name),
+                collection: Bulletin.aasm.states_for_select,
                 label: false,
                 include_blank: false
       .col-2
