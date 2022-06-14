@@ -3,3 +3,10 @@ en:
     profiles:
       show:
         title: My bulletins
+        add_bulletin: Add bulletin
+        state: Status
+        show: Show
+        edit: Edit
+        archive: Archive
+        actions: Actions
+        send_to_moderation: To moderation

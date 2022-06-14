@@ -2,8 +2,6 @@
 
 class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   before_action :set_bulletin, only: %i[publish archive reject]
-  before_action :authorize_bulletin!
-  after_action :verify_authorized
 
   def index
     @q = Bulletin.ransack(params[:q])
@@ -12,17 +10,37 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
 
   def publish
     if @bulletin.publish!
-      flash[:success] = 'Опубликовано'
+      flash[:success] = t('.success')
       redirect_to admin_root_path
     else
-      flash.now[:error] = 'Нельзя опубликовать'
+      flash.now[:error] = t('.error')
+      render :index
+    end
+  end
+
+  def reject
+    if @bulletin.reject!
+      flash[:success] = t('.success')
+      redirect_to admin_root_path
+    else
+      flash.now[:error] = t('.error')
+      render :index
+    end
+  end
+
+  def archive
+    if @bulletin.archive!
+      flash[:success] = t('.success')
+      redirect_to admin_root_path
+    else
+      flash.now[:error] = t('.error')
       render :index
     end
   end
 
   private
 
-  def authorize_bulletin!
-    authorize(@bulletin || Bulletin)
+  def set_bulletin
+    @bulletin = Bulletin.find(params[:id])
   end
 end

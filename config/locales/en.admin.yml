@@ -19,3 +19,11 @@ en:
           title: New category
         edit:
           title: Edit category
+      bulletins:
+        index:
+          title: Bulletins
+          state: Status
+          name: Name
+          actions: Actions
+          show: Show
+          archive: Archive

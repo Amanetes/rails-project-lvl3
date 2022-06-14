@@ -1,0 +1,24 @@
+en:
+  web:
+    bulletins:
+      create:
+        success: Bulletin successfully created
+      update:
+        success: Bulletin successfully updated
+      send_to_moderation:
+        success: Bulletin sent to moderation
+        error: Failed to send bulletin to moderation
+      archive:
+        success: Bulletin sent to archive
+        error: Failed to send bulletin to archive
+    admin:
+      bulletins:
+        publish:
+          success: Bulletin published
+          error: Failed to publish bulletin
+        reject:
+          success: Bulletin rejected
+          error: Failed to reject bulletin
+        archive:
+          success: Bulletin sent to archive
+          error: Failed to send bulletin to archive

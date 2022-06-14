@@ -7,18 +7,18 @@
       .row
         .p-3.p-lg-5.pt-lg-0
           .mb-4
-            h2 = 'Мои объявления'
+            h2 = t('.title')
             hr
-          = link_to 'Добавить объявление', new_bulletin_path, class: 'btn btn-primary mb-3'
+          = link_to t('.add_bulletin'), new_bulletin_path, class: 'btn btn-primary mb-3'
           = render 'search_form'
           .row.mt-2
             table.table.table-hover.mt-2
               thead
                 tr
                   th{ scope: :col } = sort_link(@q, :title)
-                  th{ scope: :col } = 'Состояние'
+                  th{ scope: :col } = t('.state')
                   th{ scope: :col } = sort_link(@q, :created_at)
-                  th{ scope: :col } Действия
+                  th{ scope: :col } = t('.actions')
                   th
               tbody
                 - @bulletins.each do |bulletin|
@@ -27,14 +27,14 @@
                     td = bulletin.aasm.human_state
                     td = time_ago_in_words(bulletin.created_at)
                     td
-                      = link_to 'Show', bulletin_path(bulletin), class: 'me-2'
-                      = link_to 'Edit', edit_bulletin_path(bulletin), class: 'me-2'
+                      = link_to t('.show'), bulletin_path(bulletin), class: 'me-2'
+                      = link_to t('.edit'), edit_bulletin_path(bulletin), class: 'me-2'
                       - if bulletin.may_send_to_moderation?
-                        = link_to 'На модерацию', send_to_moderation_bulletin_path(bulletin),
+                        = link_to t('.send_to_moderation'), send_to_moderation_bulletin_path(bulletin),
                                 method: :patch,
                                 class: 'me-2'
                       - if bulletin.may_archive?
-                        = link_to 'В архив', archive_bulletin_path(bulletin),
+                        = link_to t('.archive'), archive_bulletin_path(bulletin),
                                 method: :patch,
                                 data: { confirm: 'Are you sure?'},
                                 class: 'text-danger me-2'

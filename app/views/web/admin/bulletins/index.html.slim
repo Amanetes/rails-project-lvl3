@@ -10,9 +10,9 @@ h1.h2.mb-4 = t('.title')
     thead
       tr
         th{ scope: :col } = sort_link(@q, :title)
-        th{ scope: :col } = 'Состояние'
+        th{ scope: :col } = t('.state')
         th{ scope: :col } = sort_link(@q, :created_at)
-        th{ scope: :col } Действия
+        th{ scope: :col } = t('.actions')
     tbody
       - @bulletins.each do |bulletin|
         tr
@@ -21,6 +21,6 @@ h1.h2.mb-4 = t('.title')
           td = bulletin.aasm.human_state
           td = l(bulletin.created_at, format: :long)
           td
-            = link_to 'Show', bulletin, class: 'me-1'
+            = link_to t('.show'), bulletin, class: 'me-1'
             - if bulletin.may_archive?
-              = link_to 'Archive', archive_admin_bulletin_path(bulletin), class: 'text-danger'
+              = link_to t('.archive'), archive_admin_bulletin_path(bulletin), class: 'text-danger'

@@ -6,7 +6,7 @@
       .col-4
         = f.input :state_eq, as: :select,
                 collection: Bulletin.aasm.states_for_select,
-                label: false,
+                label: false
       .col-2
         = f.submit 'Искать', class: 'btn btn-primary me-2'
         = link_to 'Сброс', url_for, class: 'btn btn-outline-primary'

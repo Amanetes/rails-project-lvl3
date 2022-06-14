@@ -3,3 +3,10 @@ ru:
     profiles:
       show:
         title: Мои объявления
+        add_bulletin: Добавить объявление
+        state: Состояние
+        show: Показать
+        edit: Редактировать
+        archive: В архив
+        actions: Действия
+        send_to_moderation: На модерацию

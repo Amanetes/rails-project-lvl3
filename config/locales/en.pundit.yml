@@ -4,3 +4,4 @@ en:
     bulletin_policy:
       create?: You cannot create bulletins!
       edit?: You cannot edit this bulletin!
+      show?: You cannot watch this bulletin!

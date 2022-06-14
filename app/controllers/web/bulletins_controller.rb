@@ -21,7 +21,7 @@ class Web::BulletinsController < Web::ApplicationController
     @bulletin = current_user.bulletins.build(bulletin_params)
 
     if @bulletin.save
-      flash[:success] = 'Объявление создано'
+      flash[:success] = t('.success')
       redirect_to @bulletin
     else
       render :new, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class Web::BulletinsController < Web::ApplicationController
 
   def update
     if @bulletin.update(bulletin_params)
-      flash[:success] = 'Объявление обновлено'
+      flash[:success] = t('.success')
       redirect_to @bulletin
     else
       render :edit, status: :unprocessable_entity
@@ -41,25 +41,29 @@ class Web::BulletinsController < Web::ApplicationController
 
   def send_to_moderation
     if @bulletin.send_to_moderation!
-      flash[:success] = 'Отправлено на модерацию'
+      flash[:success] = t('.success')
       redirect_to profile_path
     else
-      flash.now[:error] = 'Нельзя отправить на модерацию'
+      flash.now[:error] = t('.error')
       render :show
     end
   end
 
   def archive
     if @bulletin.archive!
-      flash[:success] = 'Отправлено в архив'
+      flash[:success] = t('.success')
       redirect_to profile_path
     else
-      flash.now[:error] = 'Нельзя отправить в архив'
+      flash.now[:error] = t('.error')
       render :show
     end
   end
 
   private
+
+  def set_bulletin
+    @bulletin = Bulletin.find(params[:id])
+  end
 
   def authorize_bulletin!
     authorize(@bulletin || Bulletin)

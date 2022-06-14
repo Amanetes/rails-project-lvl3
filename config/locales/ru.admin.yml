@@ -23,3 +23,11 @@ ru:
           title: Новая категория
         edit:
           title: Редактировать категорию
+      bulletins:
+        index:
+          title: Все объявления
+          state: Состояние
+          name: Название
+          actions: Действия
+          show: Показать
+          archive: В архив
