@@ -39,4 +39,3 @@ class Bulletin < ApplicationRecord
   end
 end
 
-# TODO: не забыть включить картинки после регистрации на амазоне

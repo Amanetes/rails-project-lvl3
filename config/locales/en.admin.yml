@@ -1,0 +1,21 @@
+en:
+  web:
+    admin:
+      home:
+        index:
+          title: Bulletins under moderation
+          name: Name
+          created_at: Created At
+          actions: Actions
+      categories:
+        index:
+          id: '#'
+          name: Name
+          title: All categories
+          actions: Actions
+          edit: Edit
+          destroy: Delete
+        new:
+          title: New category
+        edit:
+          title: Edit category

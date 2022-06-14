@@ -1,12 +1,12 @@
 .p-3.bg-light.border.shadow-sm.rounded-3
-  = search_form_for @q, url: profile_path do |f|
+  = search_form_for @q, url: admin_bulletins_path do |f|
     .row.my-2
       .col-6
         = f.input :title_cont, label: false, hint: :defaults
-      .col-4
+      .col-3
         = f.input :state_eq, as: :select,
                 collection: Bulletin.aasm.states_for_select,
-                label: false,
-      .col-2
+                label: false
+      .col-3
         = f.submit 'Искать', class: 'btn btn-primary me-2'
         = link_to 'Сброс', url_for, class: 'btn btn-outline-primary'

@@ -5,20 +5,20 @@ h1.h2.mb-4 = t('activerecord.models.category.other')
 = link_to 'Добавить категорию', new_admin_category_path, class: 'btn btn-primary'
 
 .row.mt-2
-  table.table.table-borderless
+  table.table.table-hover
     thead
       tr
-        th{ scope: :col } = t('categories.id')
-        th{ scope: :col } = t('categories.name')
-        th{ scope: :col } = t('actions')
+        th{ scope: :col } = t('.id')
+        th{ scope: :col } = t('.name')
+        th{ scope: :col } = t('.actions')
     tbody
       - @categories.each do |category|
         tr
           td = category.id
           td = category.name
           td
-            = link_to 'Edit', edit_admin_category_path(category), class: 'me-1'
-            = link_to 'Destroy', admin_category_path(category),
+            = link_to t('.edit'), edit_admin_category_path(category), class: 'me-1'
+            = link_to t('.destroy'), admin_category_path(category),
                     method: :delete,
                     data: { confirm: 'Are you sure?' },
                     class: 'me-1 text-danger'

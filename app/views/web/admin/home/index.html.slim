@@ -1,0 +1,34 @@
+- content_for :title do
+  = t('.title')
+
+h1.h2.mb-4 = t('.title')
+
+.row.mt-2
+  table.table.table-hover
+    thead
+      tr
+        th{ scope: :col } = sort_link(@q, :title)
+        th{ scope: :col } = sort_link(@q, :created_at)
+        th{ scope: :col } = t('.actions')
+    tbody
+      - @bulletins.each do |bulletin|
+        tr
+          td
+            = link_to bulletin.title, bulletin
+          td = time_ago_in_words(bulletin.created_at)
+          td
+            - if bulletin.may_publish?
+              = link_to t('.publish'), publish_admin_bulletin_path(bulletin),
+                      method: :patch,
+                      class: 'text-success me-1',
+                      data: { confirm: t('.confirm_publication') }
+            - if bulletin.may_reject?
+              = link_to t('.reject'), reject_admin_bulletin_path(bulletin),
+                      method: :patch,
+                      class: 'me-1',
+                      data: { confirm: t('.confirm_reject')}
+            - if bulletin.may_archive?
+            = link_to t('.archive'), archive_admin_bulletin_path(bulletin),
+                    method: :patch,
+                    class: 'text-danger',
+                    data: { confirm: t('.confirm_archive')}

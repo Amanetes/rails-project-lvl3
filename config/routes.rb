@@ -17,6 +17,14 @@ Rails.application.routes.draw do
     resource :profile, only: :show
 
     namespace :admin do
+      root 'home#index'
+      resources :bulletins, only: :index do
+        member do
+          patch :publish
+          patch :reject
+          patch :archive
+        end
+      end
       resources :categories, except: :show
     end
   end

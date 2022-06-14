@@ -3,12 +3,12 @@
 class Web::BulletinsController < Web::ApplicationController
   before_action :set_bulletin, only: %i[show edit update send_to_moderation archive]
   before_action :authorize_bulletin!
+  skip_before_action :authenticate_user!, only: %i[index show]
   after_action :verify_authorized
 
-  # TODO: заменить стейт в отображении объявлений
   def index
-    @q = Bulletin.published.order(created_at: :desc).ransack(params[:q])
-    @bulletins = @q.result.includes(:category).joins(:category)
+    @q = Bulletin.published.ransack(params[:q])
+    @bulletins = @q.result.order(created_at: :desc).includes(:category).joins(:category)
   end
 
   def new
@@ -60,10 +60,6 @@ class Web::BulletinsController < Web::ApplicationController
   end
 
   private
-
-  def set_bulletin
-    @bulletin = Bulletin.find(params[:id])
-  end
 
   def authorize_bulletin!
     authorize(@bulletin || Bulletin)

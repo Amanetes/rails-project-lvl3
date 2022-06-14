@@ -1,0 +1,26 @@
+- content_for :title do
+  = t('.title')
+
+h1.h2.mb-4 = t('.title')
+
+= render 'search_form'
+
+.row.mt-2
+  table.table.table-hover
+    thead
+      tr
+        th{ scope: :col } = sort_link(@q, :title)
+        th{ scope: :col } = 'Состояние'
+        th{ scope: :col } = sort_link(@q, :created_at)
+        th{ scope: :col } Действия
+    tbody
+      - @bulletins.each do |bulletin|
+        tr
+          td
+            = link_to bulletin.title, bulletin_path(bulletin)
+          td = bulletin.aasm.human_state
+          td = l(bulletin.created_at, format: :long)
+          td
+            = link_to 'Show', bulletin, class: 'me-1'
+            - if bulletin.may_archive?
+              = link_to 'Archive', archive_admin_bulletin_path(bulletin), class: 'text-danger'

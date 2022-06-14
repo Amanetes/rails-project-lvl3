@@ -2,7 +2,7 @@ ru:
   activerecord:
     models:
       category:
-        one: Категория
+        one: Категорию
         other: Категории
         few: Категорий
         many: Категорий
