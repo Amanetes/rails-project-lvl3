@@ -7,6 +7,12 @@ en:
           name: Name
           created_at: Created At
           actions: Actions
+          publish: Publish
+          reject: Reject
+          archive: Archive
+          confirm_publication: Confirm publication?
+          confirm_reject: Reject bulletin?
+          confirm_archive: Confirm archivation?
       categories:
         index:
           id: '#'

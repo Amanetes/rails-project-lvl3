@@ -26,11 +26,11 @@ h1.h2.mb-4 = t('.title')
               = link_to t('.reject'), reject_admin_bulletin_path(bulletin),
                       method: :patch,
                       class: 'me-1',
-                      data: { confirm: t('.confirm_reject')}
+                      data: { confirm: t('.confirm_reject') }
             - if bulletin.may_archive?
-            = link_to t('.archive'), archive_admin_bulletin_path(bulletin),
-                    method: :patch,
-                    class: 'text-danger',
-                    data: { confirm: t('.confirm_archive')}
+              = link_to t('.archive'), archive_admin_bulletin_path(bulletin),
+                      method: :patch,
+                      class: 'text-danger',
+                      data: { confirm: t('.confirm_archive') }
 = paginate @bulletins, theme: 'bootstrap-5',
-        pagination_class: "pagination flex-wrap justify-content-center"
+        pagination_class: 'pagination flex-wrap justify-content-center'
