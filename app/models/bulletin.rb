@@ -38,4 +38,3 @@ class Bulletin < ApplicationRecord
     end
   end
 end
-

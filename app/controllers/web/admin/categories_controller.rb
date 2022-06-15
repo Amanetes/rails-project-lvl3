@@ -15,7 +15,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      flash[:success] = 'Категория создана'
+      flash[:success] = t('.success')
       redirect_to admin_categories_path
     else
       render :new, status: :unprocessable_entity
@@ -26,7 +26,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def update
     if @category.update(category_params)
-      flash[:success] = 'Категория обновлена'
+      flash[:success] = t('.success')
       redirect_to admin_categories_path
     else
       render :edit, status: :unprocessable_entity
@@ -35,7 +35,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
 
   def destroy
     if @category.destroy
-      flash[:success] = 'Категория удалена'
+      flash[:success] = t('.success')
       redirect_to admin_categories_path
     else
       render :index, status: :unprocessable_entity

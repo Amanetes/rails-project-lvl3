@@ -22,3 +22,19 @@ en:
         archive:
           success: Bulletin sent to archive
           error: Failed to send bulletin to archive
+      categories:
+        create:
+          success: Category successfully created
+        update:
+          success: Category successfully updated
+        destroy:
+          success: Category successfully deleted
+    auth:
+      callback:
+        notice: You successfully signed in
+        error: Failed to sign in
+      auth_error: You are not authorized to perform this action
+      admin_only: This section is for administrators only
+    sessions:
+      destroy:
+        notice: You successfully signed out

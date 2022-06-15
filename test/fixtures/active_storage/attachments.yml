@@ -1,0 +1,16 @@
+one_image:
+  name: image
+  record: one (Bulletin)
+  blob: one_image_blob
+
+two_image:
+  name: image
+  record: two (Bulletin)
+  blob: one_image_blob
+
+draft_image:
+  name: image
+  record: draft (Bulletin)
+  blob: draft_image_blob
+
+

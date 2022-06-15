@@ -22,5 +22,21 @@ ru:
         archive:
           success: Объявление отправлено в архив
           error: Не удалось отправить объявление в архив
+      categories:
+        create:
+          success: Категория создана
+        update:
+          success: Категория обновлена
+        destroy:
+          success: Категория удалена
+    auth:
+      callback:
+        notice: Вы вошли в систему
+        error: Не удалось войти в систему
+      auth_error: Вы не авторизованы
+      admin_only: Эта секция доступна только для администраторов
+    sessions:
+      destroy:
+        notice: Вы вышли из системы
 
 

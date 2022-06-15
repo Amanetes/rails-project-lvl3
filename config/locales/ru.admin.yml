@@ -19,6 +19,7 @@ ru:
           actions: Действия
           edit: Редактировать
           destroy: Удалить
+          destroy_confirmation: Вы уверены?
         new:
           title: Новая категория
         edit:

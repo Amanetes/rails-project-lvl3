@@ -36,7 +36,7 @@
                       - if bulletin.may_archive?
                         = link_to t('.archive'), archive_bulletin_path(bulletin),
                                 method: :patch,
-                                data: { confirm: 'Are you sure?'},
+                                data: { confirm: t('.confirm_archive')},
                                 class: 'text-danger me-2'
 
 = paginate @bulletins, theme: 'bootstrap-5',

@@ -24,6 +24,6 @@ three:
 draft:
   title: MyString
   description: MyText
-  user: one
+  user: two
   category: one
   state: draft

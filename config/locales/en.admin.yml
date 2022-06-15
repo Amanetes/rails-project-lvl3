@@ -15,6 +15,7 @@ en:
           actions: Actions
           edit: Edit
           destroy: Delete
+          destroy_confirmation: Вы уверены?
         new:
           title: New category
         edit:

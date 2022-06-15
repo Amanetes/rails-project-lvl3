@@ -10,3 +10,4 @@ en:
         archive: Archive
         actions: Actions
         send_to_moderation: To moderation
+        confirm_archive: Вы уверены?

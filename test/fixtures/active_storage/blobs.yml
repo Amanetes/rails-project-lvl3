@@ -1,0 +1,11 @@
+one_image_blob: <%= ActiveStorage::Blob.fixture(
+  filename: "hexlet.jpeg"
+  ) %>
+
+two_image_blob: <%= ActiveStorage::Blob.fixture(
+  filename: "hexlet.jpeg"
+  ) %>
+
+draft_image_blob: <%= ActiveStorage::Blob.fixture(
+  filename: "hexlet.jpeg"
+  ) %>

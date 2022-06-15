@@ -10,4 +10,8 @@ en:
         my_bulletins: My bulletins
         add_bulletin: Add bulletin
       footer:
-        hexlet_title: © Хекслет %{year}
+        hexlet_title: © Hexlet %{year}
+      admin_panel:
+        under_moderation: Bulletins under moderation
+        all_bulletins: Bulletins
+        all_categories: Categories

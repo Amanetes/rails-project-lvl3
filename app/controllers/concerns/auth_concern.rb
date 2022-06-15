@@ -26,12 +26,15 @@ module AuthConcern
     def authenticate_user!
       return if signed_in?
 
-      flash[:warn] = t 'global.flash.not_signed_in'
+      flash[:warn] = t('web.auth.auth_error')
       redirect_to root_path
     end
 
     def authenticate_admin!
-      return redirect_to root_path unless current_user.admin?
+      return if current_user&.admin?
+
+      flash[:warn] = t('web.auth.admin_only')
+      redirect_to root_path
     end
 
     helper_method :current_user, :signed_in?

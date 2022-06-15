@@ -4,8 +4,8 @@ require 'test_helper'
 
 class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
-    @bulletin = bulletins(:one)
+    @user = users(:two)
+    @bulletin = bulletins(:two)
     @category = categories(:one)
 
     @attrs = {
@@ -13,7 +13,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
       description: Faker::Lorem.sentence,
       user: @user,
       category_id: @category.id,
-      image: fixture_file_upload('hexlet.jpg', 'image/jpeg')
+      image: fixture_file_upload('hexlet.jpeg', 'image/jpeg')
     }
   end
 
@@ -57,12 +57,19 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert { @bulletin.title == @attrs[:title] }
   end
 
-  test 'should PATCH from draft to under_moderation' do
+  test 'should PATCH bulletins#send_to_moderation' do
     bulletin = bulletins(:draft)
-    byebug
     sign_in(@user)
     patch send_to_moderation_bulletin_path(bulletin)
     bulletin.reload
     assert { bulletin.under_moderation? }
+  end
+
+  test 'should PATCH bulletins#archive' do
+    bulletin = bulletins(:draft)
+    sign_in(@user)
+    patch archive_bulletin_path(bulletin)
+    bulletin.reload
+    assert { bulletin.archived? }
   end
 end
