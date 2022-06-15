@@ -4,7 +4,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   before_action :set_category, only: %i[edit update destroy]
 
   def index
-    @categories = Category.all
+    @categories = Category.all.page(params[:page])
   end
 
   def new

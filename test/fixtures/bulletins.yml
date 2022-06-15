@@ -5,9 +5,25 @@ one:
   description: MyText
   user: one
   category: one
+  state: draft
 
 two:
   title: MyString
   description: MyText
   user: two
   category: two
+  state: under_moderation
+
+three:
+  title: MyString
+  description: MyText
+  user: two
+  category: two
+  state: published
+
+draft:
+  title: MyString
+  description: MyText
+  user: one
+  category: one
+  state: draft

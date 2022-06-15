@@ -8,7 +8,11 @@ class Web::BulletinsController < Web::ApplicationController
 
   def index
     @q = Bulletin.published.ransack(params[:q])
-    @bulletins = @q.result.order(created_at: :desc).includes(:category).joins(:category)
+    @bulletins = @q.result
+                   .order(created_at: :desc)
+                   .includes(:category)
+                   .joins(:category)
+                   .page(params[:page])
   end
 
   def new

@@ -24,3 +24,5 @@ h1.h2.mb-4 = t('.title')
             = link_to t('.show'), bulletin, class: 'me-1'
             - if bulletin.may_archive?
               = link_to t('.archive'), archive_admin_bulletin_path(bulletin), class: 'text-danger'
+= paginate @bulletins, theme: 'bootstrap-5',
+        pagination_class: "pagination flex-wrap justify-content-center"
