@@ -12,7 +12,7 @@ en:
           archive: Archive
           confirm_publication: Confirm publication?
           confirm_reject: Reject bulletin?
-          confirm_archive: Confirm archivation?
+          confirm_archive: Confirm archiving?
       categories:
         index:
           id: '#'
@@ -20,8 +20,9 @@ en:
           title: All categories
           actions: Actions
           edit: Edit
+          add_category: Add category
           destroy: Delete
-          destroy_confirmation: Вы уверены?
+          destroy_confirmation: Are you sure?
         new:
           title: New category
         edit:

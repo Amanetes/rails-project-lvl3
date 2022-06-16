@@ -3,10 +3,8 @@
 class Web::AuthController < Web::ApplicationController
   skip_before_action :authenticate_user!
   def callback
-    email = auth[:info][:email].downcase
-    name = auth[:info][:name]
-    existing_user = User.find_or_initialize_by(name: name, email: email)
-    if existing_user.save
+    existing_user = GithubAuthService.login(auth)
+    if existing_user.persisted?
       sign_in existing_user
       flash[:notice] = t('.notice')
       redirect_to root_path

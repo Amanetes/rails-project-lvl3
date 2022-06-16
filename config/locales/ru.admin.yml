@@ -18,6 +18,7 @@ ru:
           title: Все категории
           actions: Действия
           edit: Редактировать
+          add_category: Добавить категорию
           destroy: Удалить
           destroy_confirmation: Вы уверены?
         new:
