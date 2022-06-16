@@ -6,7 +6,7 @@ class BulletinPolicy < ApplicationPolicy
   end
 
   def show?
-    author? || record.published?
+    author? || admin? || record.published?
   end
 
   def create?
