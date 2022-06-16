@@ -3,6 +3,8 @@ Bulletin Board is a service in which users can post and respond to listings and 
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Amanetes/rails-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/Amanetes/rails-project-lvl3/actions)
+[![CI](https://github.com/Amanetes/rails-project-lvl3/actions/workflows/main.yml/badge.svg)](https://github.com/Amanetes/rails-project-lvl3/actions/workflows/main.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8bac43657a2dc376ddd8/maintainability)](https://codeclimate.com/github/Amanetes/rails-project-lvl3/maintainability)
 
 ## Please follow the link below to access the app
 [Bulletin Board](https://amanethes-bulletin-board.herokuapp.com/ "I am not crazy, my mother had me tested.")
