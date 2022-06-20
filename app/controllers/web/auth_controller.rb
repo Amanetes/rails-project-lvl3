@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Web::AuthController < Web::ApplicationController
-  skip_before_action :authenticate_user!
   def callback
     existing_user = GithubAuthService.login(auth)
     if existing_user.persisted?

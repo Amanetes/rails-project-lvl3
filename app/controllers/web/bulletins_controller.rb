@@ -3,7 +3,7 @@
 class Web::BulletinsController < Web::ApplicationController
   before_action :set_bulletin, only: %i[show edit update send_to_moderation archive]
   before_action :authorize_bulletin!
-  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :authenticate_user!, except: %i[index show]
   after_action :verify_authorized
 
   def index

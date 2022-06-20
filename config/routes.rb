@@ -25,7 +25,7 @@ Rails.application.routes.draw do
           patch :archive
         end
       end
-      resources :categories, except: :show
+      resources :categories, only: %i[index new create edit update destroy]
     end
   end
 end
